@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-void-950 text-silver-200 font-body antialiased;
+  }
+  ::selection {
+    @apply bg-volt-500/30 text-white;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #08080c;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2e2f3a;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4b4d59;
+  }
+  input, textarea {
+    @apply bg-void-800 border border-silver-600 rounded-lg px-4 py-2.5 text-sm text-silver-200 placeholder-silver-500 outline-none transition-colors duration-200;
+  }
+  input:focus, textarea:focus {
+    @apply border-volt-500 ring-1 ring-volt-500/40;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-void-850/90 border border-silver-600/50 rounded-2xl;
+  }
+  .panel-hover {
+    @apply transition-all duration-300 hover:border-silver-500 hover:bg-void-800;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-volt-500 text-void-950 font-semibold text-sm px-5 py-2.5 rounded-lg transition-all duration-200 hover:bg-volt-400 hover:shadow-[0_0_24px_rgba(77,159,255,0.35)] active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 border border-silver-600 text-silver-200 font-medium text-sm px-5 py-2.5 rounded-lg transition-all duration-200 hover:border-silver-400 hover:text-white hover:bg-void-700 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 border border-red-900/60 text-red-400 font-medium text-sm px-4 py-2 rounded-lg transition-all duration-200 hover:bg-red-950/40 hover:border-red-700 active:scale-[0.98] disabled:opacity-50;
+  }
+  .field-label {
+    @apply block text-xs font-medium uppercase tracking-wider text-silver-400 mb-1.5;
+  }
+  .input-full {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  .text-gradient-silver {
+    background: linear-gradient(135deg, #f0f1f4 0%, #9a9daa 50%, #f0f1f4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-noise-grid {
+    background-image:
+      linear-gradient(rgba(154, 157, 170, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(154, 157, 170, 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+}
